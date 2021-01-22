@@ -1,0 +1,91 @@
+[
+    {
+        "hazir": {},
+        "kodlar": {
+            "premium kontrol": {
+                "isim": "premium kontrol",
+                "id": "KHBnAk5Wo3",
+                "desc": "sunucuda premium aktif mi değilmi bakarsınoz",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/758775600835198977/8d3a91ea57049e04abe2507e6be04138.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\nconst db = require('quick.db')\r\n\r\nexports.run = async (client, message, args) => {\r\n    let pre = await db.fetch(`premod_${message.guild.id}`) //nesfit\r\n  let preYazi;\r\n  if (pre == null) preYazi = ' Bu sunucuda premium mod aktif değil.'\r\n  if (pre == 'aktif') preYazi = ' Bu sunucu için premium mod aktif.'\r\n  if (pre == 'deaktif') preYazi = 'Bu sunucuda premium mod aktif değil.'\r\n  const embed = new Discord.RichEmbed()\r\n  .setTitle('Premium Kontrol')\r\n  .setColor(\"000000\")\r\n  .setDescription(preYazi)\r\n  message.channel.send(embed)\r\n  }\r\n//nesfit\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: true,\r\n    aliases: [],\r\n    permLevel: 0,\r\n}\r\n\r\nexports.help = {\r\n    name: 'premium-kontrol',\r\n    description: 'Premium Kontrol Eder.',\r\n    usage: ''\r\n}\r\n",
+                "kod_rank": "altin",
+                "k_adi": "Neeko",
+                "date": "1/17/2021"
+            },
+            "Sadece Premium Sunucuların Kullanmasını İstediğiniz Koda Bunu Ekleyin: ": {
+                "isim": "Sadece Premium Sunucuların Kullanmasını İstediğiniz Koda Bunu Ekleyin: ",
+                "id": "KK47HI9yKd",
+                "desc": "sadece premium sunucular ",
+                "modules": [
+                    "yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/758775600835198977/8d3a91ea57049e04abe2507e6be04138.png",
+                "main_code": "Sadece Premium Sunucuların Kullanmasını İstediğiniz Koda Bunu Ekleyin: ",
+                "komutlar_code": "let nesfit = await db.fetch(`premod_${message.guild.id}`)\r\nif (!nesfit) return message.channel.send(\"Bu sunucuda **premium mod aktif değil**, bu sebepten dolayı premium sunucu kodlarını kullanamazsınız.\")\r\n\r\n//Bu bölümü kodunuzdaki export.run satırının hemen altına atın.",
+                "kod_rank": "altin",
+                "k_adi": "Neeko",
+                "date": "1/17/2021"
+            },
+            "Canlı Desktek": {
+                "isim": "Canlı Desktek",
+                "id": "7p2K9hSy32",
+                "desc": "Canlı Destek Komutudur komutlar/canlı-destek.js ye atılacaktır",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/797099022237171732/9cd56fdeb110164c7e7de975eb36cb5a.png",
+                "main_code": "Yok",
+                "komutlar_code": "const Discord = require('discord.js')\r\nexports.run = async(client, message, args) => {\r\n\r\n  if (!message.member.hasPermission(\"ADMINISTRATOR \")) return message.reply(`Bu Komutu Kullanabilmek İçin **Yönetici** İznine Sahip Olmalısın!`);\r\n\r\n   let devtr = args.slice(0).join(' ');\r\n let chan = message.channel;\r\n      let canlıdestekkanalı = \"799197911472406588\";//destek kanalının ıd si\r\n   \r\n  if (!devtr) return message.reply('Canlı Destek Ekibini Çağırmak İçin Bir Sebeb Belirt')\r\n  if (devtr.length < 7) return message.reply(\"Canlı Destek Ekibini Çağırmak İçin En Az 7 Harfli Sebeb Girmen Gerek\");\r\n  if (!message.member.hasPermission(\"CREATE_INSTANT_INVITE\")) return;\r\n  message.channel.createInvite({maxAge: 0}).then(invite => { \r\n  \r\n      let isEnabled;\r\n      message.reply(\"✅ | Canlı Destek Ekibi En Yakın Zamanda Sizinle İlgilenecektir\")\r\n    let nesfitcode = new Discord.MessageEmbed()\r\n    .setColor('RANDOM')\r\n    .setAuthor(`${message.author.tag} (${message.author.id})`, `${message.author.avatarURL()}`)\r\n    .setTitle('Canlı Destek Talebi')\r\n    .addField('Sebep:', `${devtr}`)\r\n    .addField(`Sunucunun Davet Linki:`, `${invite}`)\r\n    .setThumbnail(message.guild.iconURL())\r\n    .setFooter('Canlı Destek Talebi');\r\n    client.channels.cache.get(canlıdestekkanalı).send(nesfitcode);\r\n  });\r\n}\r\n\r\n   \r\n  exports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 3\r\n};\r\nexports.help = {\r\n  name: 'canlıdestek',\r\n  description: 'Canlı Destek Tablebi Oluşturur.',\r\n  usage: 'canlıdestek'\r\n};",
+                "kod_rank": "altin",
+                "k_adi": "$GızemlıOyuncuYT",
+                "date": "1/17/2021"
+            },
+            "Kod Paylaş": {
+                "isim": "Kod Paylaş",
+                "id": "Czf1qLJ3iz",
+                "desc": "Kod Paylaşır Ayarlamasız komutlar/kod-paylaş.js e atıalcaktır",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/797099022237171732/9cd56fdeb110164c7e7de975eb36cb5a.png",
+                "main_code": "yok",
+                "komutlar_code": "const Discord = require('discord.js');\r\n\r\nexports.run = (client, message, args) => {\r\n  \r\n\r\nif(!message.member.roles.cache.has('kod paylaşımcı rol id')) return message.channel.send(`Bu Kodu Kullanabilmen İçin **Kod Paylaşımcı** Rolüne Sahip Olmalısın!`).then(message => message.delete(6000)); \r\n\r\nlet kanal = message.mentions.channels.first()\r\nif(!kanal) return message.channel.send('Hangi kanala kod paylaşacağımı yaz!').then(message => message.delete(6000)); \r\n  \r\nlet isim = args[1]\r\nif(!isim) return message.channel.send('Komutun ismini yaz!').then(message => message.delete(6000)); \r\n  \r\nlet link = args[2]\r\nif(!link) return message.channel.send('Paylaşılacak kodun linkini `https://alpha-hastebin.glitch.me/` Bu Siteye Yükleyerek Paylaşınız.').then(message => message.delete(6000));\r\n  \r\nlet nesfitcode = args[3]\r\nif(!nesfitcode) return message.channel.send('Paylaşılacak kodun alternatif linkini `https://judge-developer-hastebin.glitch.me/` Bu Siteye Yükleyerek Paylaşınız.').then(message => message.delete(6000)); \r\n  \r\nmessage.channel.send(`Başarılı <#${kanal.id}> adlı kanala kod paylaşıldı.`).then(message => message.delete(6000)); \r\n  \r\nconst embed = new Discord.MessageEmbed()\r\n\r\n.setColor('GREEN')\r\n.setTitle('Yeni Bir Kod Eklendi!')\r\n.setDescription(`**Paylaşılan kodun ismi:** \\`${isim}\\` \r\n\r\n**Paylaşan kişi :** <@${message.author.id}>\r\n\r\n**Link** : ${link}\r\n**Alternatif** : ${nesfitcode}\r\n\r\n**İzinsiz Paylaşmayınız.** \r\n**Durumu :** \\`Hatasız,Çalışıyor.\\``)\r\n\r\nkanal.send(embed)\r\n};\r\n\r\nexports.conf = {\r\nenabled: true,\r\nguildOnly: false,\r\npermLevel: 0,\r\naliases: []\r\n};\r\nexports.help = {\r\nname: 'kod-paylaş',    \r\ndescription: \"Sunucuda kod paylaşmaya yarar.\",\r\nusage: \"kod-paylaş\"  \r\n};",
+                "kod_rank": "altin",
+                "k_adi": "$GızemlıOyuncuYT",
+                "date": "1/19/2021"
+            },
+            "Fake mesaj": {
+                "isim": "Fake mesaj",
+                "id": "T51ntyfBn9",
+                "desc": "Fake Mesaj Yazar komutlar/fake-mesaj.js ye atılacaktır",
+                "modules": [
+                    "discord.js"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/797099022237171732/9cd56fdeb110164c7e7de975eb36cb5a.png",
+                "main_code": "yok",
+                "komutlar_code": "const dc = require('discord.js');\r\n\r\nexports.run = function (client, message, args) {\r\n      if (!message.guild) {\r\n    const NesfiCcode = new dc.MessageEmbed()\r\n    .setColor(0xFF0000)\r\n    .setTimestamp()\r\n    .setAuthor(message.author.nick, message.author.avatar)\r\n    .addField('Komutları Özel Mesajlarda Kullanılamaz!')\r\n    return message.author.send(NesfiCcode); } \r\n  let kişi = message.mentions.users.first();\r\n    if (message.mentions.users.size < 1) return message.reply('Lütfen Birisini Etiketle')\r\n    let yazi = args[1]\r\n    if (!yazi) return message.reply('Lütfen Yazini Yaz')\r\n    message.delete()\r\n    message.channel.createWebhook(kişi.nick, kişi.avatar)\r\n    .then(webhook => webhook.edit(kişi.nick, kişi.avatar)\r\n        .then(wb => {\r\n            const hook = new dc.WebhookClient(wb.id, wb.token);\r\n            hook.send(yazi)\r\n            hook.delete()\r\n        })\r\n        .catch(console.error))\r\n        .catch(console.error);\r\n};\r\n\r\nexports.conf = {\r\n    enabled: true,\r\n    guildOnly: false,\r\n    aliases: [],\r\n    permLevel: 0\r\n};\r\n\r\nexports.help = {\r\n    name: 'fakemesaj',\r\n    description: 'fakemesaj',\r\n    usage: 'fakemesaj'\r\n};",
+                "kod_rank": "altin",
+                "k_adi": "$GızemlıOyuncuYT",
+                "date": "1/19/2021"
+            },
+            "Afk": {
+                "isim": "Afk",
+                "id": "trrkmFZrKh",
+                "desc": "afk olursunuz komutlar/afk.js e atılacaktır",
+                "modules": [
+                    "discord.js quick.db "
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/797099022237171732/9cd56fdeb110164c7e7de975eb36cb5a.png",
+                "main_code": "client.on(\"message\" , async msg => {\r\n  \r\n  if(!msg.guild) return;\r\n  if(msg.content.startsWith(ayarlar.prefix+\"afk\")) return; \r\n  \r\n  let afk = msg.mentions.users.first()\r\n  \r\n  const kisi = db.fetch(`afkid_${msg.author.id}_${msg.guild.id}`)\r\n  \r\n  const isim = db.fetch(`afkAd_${msg.author.id}_${msg.guild.id}`)//nesfit code\r\n if(afk){//nesfit code\r\n   const sebep = db.fetch(`afkSebep_${afk.id}_${msg.guild.id}`)\r\n   const kisi3 = db.fetch(`afkid_${afk.id}_${msg.guild.id}`)\r\n   if(msg.content.includes(kisi3)){\r\n//nesfit code\r\n       msg.reply(`Etiketlediğiniz Kişi Afk \\nSebep : ${sebep}`)\r\n   }\r\n }//nesfit code\r\n  if(msg.author.id === kisi){\r\n\r\n       msg.reply(`Afk'lıktan Çıktınız`)//nesfit code\r\n   db.delete(`afkSebep_${msg.author.id}_${msg.guild.id}`)\r\n   db.delete(`afkid_${msg.author.id}_${msg.guild.id}`)\r\n   db.delete(`afkAd_${msg.author.id}_${msg.guild.id}`)\r\n    msg.member.setNickname(isim)\r\n    \r\n  }//nesfit code\r\n  \r\n});//nesfit code",
+                "komutlar_code": "const dc = require(\"discord.js\");\r\nconst quick = require(\"quick.db\");//nesfit code\r\nexports.run = async (client, message, args) => {\r\n\r\n  const kisi = quick.fetch(`afkid_${message.author.id}_${message.guild.id}`);\r\n  if (kisi) return;\r\n  const sebep = args[0];\r\n  if (!args[0]) {\r\n    let kullanıcı = message.guild.members.cache.get(message.author.id);\r\n    const b = kullanıcı.displayName;//nesfit code\r\n\r\n    await quick.set(//nesfit code\r\n      `afkSebep_${message.author.id}_${message.guild.id}`,\r\n      \"Sebep Girilmemiş\"\r\n    );\r\n    await quick.set(\r\n      `afkid_${message.author.id}_${message.guild.id}`,//nesfit code\r\n      message.author.id\r\n    );\r\n    await quick.set(`afkAd_${message.author.id}_${message.guild.id}`, b);\r\n\r\n    const a = await quick.fetch(\r\n      `afkSebep_${message.author.id}_${message.guild.id}`\r\n    );\r\n//nesfit code\r\n    message.channel.send(`Başarıyla Afk Oldunuz \\n Sebep: ${a}`);\r\n\r\n    message.member.setNickname(`[AFK] ` + b);\r\n  }\r\n  if (args[0]) {\r\n    let sebep = args.join(\" \");\r\n    let kullanıcı = message.guild.members.cache.get(message.author.id);\r\n    const b = kullanıcı.displayName;\r\n    await quick.set(`afkSebep_${message.author.id}_${message.guild.id}`, sebep);\r\n    await quick.set(\r\n      `afkid_${message.author.id}_${message.guild.id}`,\r\n      message.author.id\r\n    );\r\n    await quick.set(`afkAd_${message.author.id}_${message.guild.id}`, b);\r\n    const a = await quick.fetch(\r\n      `afkSebep_${message.author.id}_${message.guild.id}`\r\n    );\r\n\r\n    message.channel.send(`Başarıyla Afk Oldunuz \\n Sebep: ${a}`);\r\n\r\n    message.member.setNickname(`[AFK] ` + b);\r\n  }\r\n};\r\n\r\nexports.conf = {\r\n  enabled: true,\r\n  guildOnly: false,\r\n  aliases: [],\r\n  permLevel: 0\r\n};//nesfit code\r\n\r\nexports.help = {\r\n  name: \"afk\",\r\n  description: \"Afk Olmanızı Sağlar.\",\r\n  usage: \"afk / afk <sebep>\"\r\n};",
+                "kod_rank": "altin",
+                "k_adi": "$GızemlıOyuncuYT",
+                "date": "1/19/2021"
+            }
+        }
+    }
+]

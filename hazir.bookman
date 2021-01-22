@@ -1,0 +1,49 @@
+[
+    {
+        "hazir": {},
+        "kodlar": {
+            "mod altyapı": {
+                "isim": "mod altyapı",
+                "id": "3wvQQywxHO",
+                "desc": "Bana ait değildir !",
+                "modules": [
+                    "Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/758775600835198977/8d3a91ea57049e04abe2507e6be04138.png",
+                "main_code": "https://glitch.com/edit/#!/mod-altyap-",
+                "komutlar_code": "https://glitch.com/edit/#!/mod-altyap-",
+                "kod_rank": "hazir",
+                "k_adi": "Neeko",
+                "date": "1/17/2021"
+            },
+            "ST-AT": {
+                "isim": "ST-AT",
+                "id": "Z6wFUi3iXi",
+                "desc": "DevTR Nindir",
+                "modules": [
+                    "Yok"
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/758775600835198977/8d3a91ea57049e04abe2507e6be04138.png",
+                "main_code": "https://glitch.com/~st-at-altyapii",
+                "komutlar_code": "https://glitch.com/~st-at-altyapii",
+                "kod_rank": "hazir",
+                "k_adi": "Neeko",
+                "date": "1/17/2021"
+            },
+            "j4j bot": {
+                "isim": "j4j bot",
+                "id": "QyNRJQ9Dqk",
+                "desc": "DevTR Aitdir",
+                "modules": [
+                    "."
+                ],
+                "icon": "https://cdn.discordapp.com/avatars/758775600835198977/8d3a91ea57049e04abe2507e6be04138.png",
+                "main_code": "https://glitch.com/~devtr-j4j-botu",
+                "komutlar_code": "https://glitch.com/~devtr-j4j-botu",
+                "kod_rank": "hazir",
+                "k_adi": "Neeko",
+                "date": "1/19/2021"
+            }
+        }
+    }
+]
